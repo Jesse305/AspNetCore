@@ -1,0 +1,26 @@
+@model Web.Models.Categoria
+@{
+    ViewData["Title"] = "Categorias";
+}
+
+
+<div class="panel panel-default">
+    <div class="panel-heading"><h4><b>Cadastro de Categorias</b></h4></div>
+</div>
+
+    
+<form asp-controller="Categorias" asp-action="Cadastro" method="POST">
+    <div class="form-group">
+        <div class="row">
+            <label class="col-md-1" for="Nome">Nome:</label>
+            <div class="col-md-5">
+                <input class="form-control" asp-for="Nome" required>
+            </div>                     
+        </div>
+        <div class="col-md-6 text-center" style="margin-top: 10px;">
+            <button type="submit" class="btn btn-success btn-sm">Salvar</button>
+            <button class="btn btn-default btn-sm" onclick="javascript: history.back(); return false;">Cancelar</button>
+        </div>
+    </div>
+</form>
+    

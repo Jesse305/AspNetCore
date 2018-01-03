@@ -1,0 +1,10 @@
+/home/jesse/Documentos/AspNetCore/Web/bin/Debug/netcoreapp2.0/Web.deps.json
+/home/jesse/Documentos/AspNetCore/Web/bin/Debug/netcoreapp2.0/Web.runtimeconfig.json
+/home/jesse/Documentos/AspNetCore/Web/bin/Debug/netcoreapp2.0/Web.runtimeconfig.dev.json
+/home/jesse/Documentos/AspNetCore/Web/bin/Debug/netcoreapp2.0/Web.dll
+/home/jesse/Documentos/AspNetCore/Web/bin/Debug/netcoreapp2.0/Web.pdb
+/home/jesse/Documentos/AspNetCore/Web/obj/Debug/netcoreapp2.0/Web.csproj.CoreCompileInputs.cache
+/home/jesse/Documentos/AspNetCore/Web/obj/Debug/netcoreapp2.0/Web.AssemblyInfoInputs.cache
+/home/jesse/Documentos/AspNetCore/Web/obj/Debug/netcoreapp2.0/Web.AssemblyInfo.cs
+/home/jesse/Documentos/AspNetCore/Web/obj/Debug/netcoreapp2.0/Web.dll
+/home/jesse/Documentos/AspNetCore/Web/obj/Debug/netcoreapp2.0/Web.pdb
