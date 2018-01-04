@@ -11,15 +11,17 @@
     
 <form asp-controller="Categorias" asp-action="Cadastro" method="POST">
     <div class="form-group">
+        <input type="hidden" asp-for="Id">
         <div class="row">
             <label class="col-md-1" for="Nome">Nome:</label>
             <div class="col-md-5">
                 <input class="form-control" asp-for="Nome" required>
+                <span asp-validation-for="Nome" class="text-danger"></span>
             </div>                     
         </div>
         <div class="col-md-6 text-center" style="margin-top: 10px;">
             <button type="submit" class="btn btn-success btn-sm">Salvar</button>
-            <button class="btn btn-default btn-sm" onclick="javascript: history.back(); return false;">Cancelar</button>
+            <a asp-controller="Categorias" asp-action="Index" class="btn btn-default btn-sm" >Cancelar</a>
         </div>
     </div>
 </form>
