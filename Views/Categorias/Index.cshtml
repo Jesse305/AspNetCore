@@ -1,3 +1,4 @@
+@model IEnumerable<Web.Models.Categoria>
 @{
     ViewData["Title"] = "Categorias";
 }
@@ -9,4 +10,31 @@
 <a asp-controller="Categorias" asp-action="Form" class="btn btn-success btn-sm">
     <i class="glyphicon glyphicon-plus"></i> Nova Categoria
 </a>
+
+<table class="table table-condensed table-bordered table-striped data_table" style="margin-top: 10px;">
+    <thead>
+        <tr>
+            <th width="100px;">Id</th>
+            <th>Categoria</th>
+            <th width="150px;" class="text-center">Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var categoria in Model) {
+            <tr>
+                <td> @categoria.Id </td>
+                <td> @categoria.Nome </td>
+                <td align="center">
+                    <a class="btn btn-warning btn-xs" title="Editar">
+                        <i class="glyphicon glyphicon-edit"></i>
+                    </a>
+                    <button class="btn btn-danger btn-xs delete" data-href="Categorias/Delete/@categoria.Id" 
+                    title="Excluir" onclick="return false;">
+                        <i class="glyphicon glyphicon-remove"></i>
+                    </button>
+                </td>
+            </tr>
+        }        
+    </tbody>
+</table>
 

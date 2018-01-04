@@ -1,3 +1,4 @@
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Web.Data;
 using Web.Models;
@@ -14,7 +15,8 @@ namespace Web.Controllers
         } 
         public IActionResult Index()
         {
-            return View();
+            var categorias = _context.Categorias.ToList();
+            return View(categorias);
         } 
 
         public IActionResult Form()
@@ -26,12 +28,25 @@ namespace Web.Controllers
         public IActionResult Cadastro(Categoria categoria)
         {
             _context.Categorias.Add(categoria);
-            var resultado = _context.SaveChanges();
+            _context.SaveChanges();
             
             TempData["AlertaTipo"] = "success";
             TempData["AlertaMsg"] = "Cadastro realizado com sucesso!";            
 
             return RedirectToAction("Index");
-        }      
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            var categoria = _context.Categorias.FirstOrDefault(c => c.Id == id);
+            _context.Categorias.Remove(categoria);
+            _context.SaveChanges();
+
+            TempData["AlertaTipo"] = "success";
+            TempData["AlertaMsg"] = "Cadastro apagado com sucesso!";
+
+            return RedirectToAction("Index");
+        }    
     }
 }
