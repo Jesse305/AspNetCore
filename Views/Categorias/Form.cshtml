@@ -9,7 +9,7 @@
 </div>
 
     
-<form asp-controller="Categorias" asp-action="Cadastro" method="POST">
+<form id="form" asp-controller="Categorias" asp-action="Cadastro" method="POST">
     <div class="form-group">
         <input type="hidden" asp-for="Id">
         <div class="row">
@@ -20,9 +20,55 @@
             </div>                     
         </div>
         <div class="col-md-6 text-center" style="margin-top: 10px;">
-            <button type="submit" class="btn btn-success btn-sm">Salvar</button>
-            <a asp-controller="Categorias" asp-action="Index" class="btn btn-default btn-sm" >Cancelar</a>
+            <button type="button" class="btn btn-success btn-sm" id="btn_salvar">Salvar</button>
+            <button type="button" class="btn btn-default btn-sm" onclick="javascript: history.back();" >Cancelar</button>
         </div>
     </div>
 </form>
+
+<script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+
+        $('#btn_salvar').click(function(){
+            var dados = $('#form').serialize();
+            if(validaForm()){
+                $.ajax({
+                    type: 'POST',
+                    dataType: 'json',
+                    url: '/Categorias/Duplicidade',
+                    data: dados,
+                    success: function(data){
+                        if(data == 0){
+                            $('#form').submit();
+                        }
+                        else{
+                            alertaToast('error', 'Categoria já possui cadastro');
+                        }
+                    },
+                    error: function(erro, desc){
+                        alertaToast('Ocorreu um erro, ' + desc);
+                    }
+                });
+            }
+        });
+        
+    });
+    function validaForm(){
+        var retorno =  false;
+        var msg = 'Informe os campos obrigatórios!';
+        var nome = $('#Nome');
+
+        if(nome.val() == ''){
+            nome.focus();
+            alertaToast('error', msg);
+        }
+
+        else{
+            retorno = true;
+        }
+        return retorno;
+    }
+</script>
     
