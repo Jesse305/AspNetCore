@@ -1,6 +1,12 @@
 ﻿// Write your JavaScript code.
 $(document).ready(function(){
 
+    $('.data_table').DataTable({
+        "language" : {
+            "url" : "https://cdn.datatables.net/plug-ins/1.10.12/i18n/Portuguese-Brasil.json"
+        }
+    });
+
     $('.delete').click(function(){
         var href = $(this).attr('data-href');
         swal({
@@ -22,6 +28,8 @@ $(document).ready(function(){
             }
         });
     });
+
+    $('.real').mask('#.##0,00', {reverse: true});
 
 });
 

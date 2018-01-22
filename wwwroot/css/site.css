@@ -37,3 +37,11 @@
 .panel {
     margin-top: 5px;
 }
+
+label {
+    margin-top: 6px;
+}
+
+.form-control {
+    margin-bottom: 4px;
+}

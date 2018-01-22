@@ -1,5 +1,6 @@
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Web.Data;
 using Web.Models;
 
@@ -75,6 +76,14 @@ namespace Web.Controllers
             TempData["AlertaMsg"] = "Cadastro apagado com sucesso!";
 
             return RedirectToAction("Index");
-        }    
+        }
+
+        public IActionResult Produtos(int id)
+        {
+            
+            var produtos = _context.Produtos.Where(p => p.CategoriaId == id).Include(p => p.Categoria).ToList();
+            return View(produtos);
+        } 
+
     }
 }

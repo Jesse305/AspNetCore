@@ -1,0 +1,84 @@
+@model Web.Models.Produto
+@{
+    ViewData["Title"] = "Produtos";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading"><h4><b>Cadastro de Produtos</b></h4></div>
+</div>
+
+<form id="form" asp-controller="Produtos" asp-action="Cadastro" method="POST">
+    <input type="hidden" asp-for="Id">
+    <div class="row">
+        <label class="col-md-1" for="Nome">Nome:</label>
+        <div class="col-md-5">
+            <input class="form-control" asp-for="Nome" required>
+        </div>
+    </div>
+    <div class="row">
+        <label class="col-md-1" for="Preco">Preço:</label>
+        <div class="col-md-5">
+            <input class="form-control real" asp-for="Preco" >
+        </div>
+    </div>
+    <div class="row">
+        <label class="col-md-1" for="CategoriaId">Categoria:</label>
+        <div class="col-md-5">
+            <select asp-for="CategoriaId" class ="form-control" asp-items="ViewBag.CategoriaId"></select>
+        </div>
+    </div>
+    <div class="col-md-6 text-center" style="margin-top: 10px;">
+            <button type="button" class="btn btn-success btn-sm" id="btn_salvar">Salvar</button>
+            <button type="button" class="btn btn-default btn-sm" onclick="javascript: history.back();" >Cancelar</button>
+    </div>
+</form>
+
+<script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        
+        $('#btn_salvar').click(function(){
+            var form = $('#form');
+            var dados = form.serialize();
+            if(validaForm()){
+                $.ajax({
+                    type: 'POST',
+                    dataType: 'json',
+                    url: '/Produtos/Duplicidade',
+                    data: dados,
+                    success: function(data){
+                        if(data == 0){
+                            form.submit();
+                        }else{
+                            alertaToast('error', 'Produto já possui cadastro');
+                        }
+                    },
+                    error: function(erro, desc){
+                        alertaToast('error', 'Ocorreu um erro, ' + desc);
+                    }
+                });
+            }
+        });
+    });
+
+    function validaForm(){
+        var nome = $('#Nome');
+        var preco = $('#Preco');
+        var msg = 'Informe os campos obrigatórios!';
+
+        if(nome.val() == ''){
+            nome.focus();
+            alertaToast('error', msg);
+            return;
+        }
+
+        if(preco.val().length < 3){
+            preco.focus();
+            alertaToast('error', msg);
+            return;
+        }
+
+        return true;
+    }
+</script>

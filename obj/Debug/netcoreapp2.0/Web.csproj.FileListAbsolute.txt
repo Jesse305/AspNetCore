@@ -8,3 +8,13 @@
 /home/jesse/Documentos/AspNetCore/Web/obj/Debug/netcoreapp2.0/Web.AssemblyInfo.cs
 /home/jesse/Documentos/AspNetCore/Web/obj/Debug/netcoreapp2.0/Web.dll
 /home/jesse/Documentos/AspNetCore/Web/obj/Debug/netcoreapp2.0/Web.pdb
+C:\Users\Jesse\Documents\AspNetCore\Web\bin\Debug\netcoreapp2.0\Web.deps.json
+C:\Users\Jesse\Documents\AspNetCore\Web\bin\Debug\netcoreapp2.0\Web.runtimeconfig.json
+C:\Users\Jesse\Documents\AspNetCore\Web\bin\Debug\netcoreapp2.0\Web.runtimeconfig.dev.json
+C:\Users\Jesse\Documents\AspNetCore\Web\bin\Debug\netcoreapp2.0\Web.dll
+C:\Users\Jesse\Documents\AspNetCore\Web\bin\Debug\netcoreapp2.0\Web.pdb
+C:\Users\Jesse\Documents\AspNetCore\Web\obj\Debug\netcoreapp2.0\Web.csproj.CoreCompileInputs.cache
+C:\Users\Jesse\Documents\AspNetCore\Web\obj\Debug\netcoreapp2.0\Web.AssemblyInfoInputs.cache
+C:\Users\Jesse\Documents\AspNetCore\Web\obj\Debug\netcoreapp2.0\Web.AssemblyInfo.cs
+C:\Users\Jesse\Documents\AspNetCore\Web\obj\Debug\netcoreapp2.0\Web.dll
+C:\Users\Jesse\Documents\AspNetCore\Web\obj\Debug\netcoreapp2.0\Web.pdb

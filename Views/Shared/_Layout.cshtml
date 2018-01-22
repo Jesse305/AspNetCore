@@ -6,6 +6,7 @@
     <title>@ViewData["Title"] - Web</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/lib/datatables.net-bs/css/dataTables.bootstrap.min.css" />
     <link rel="stylesheet" href="~/lib/jquery-toast-plugin/dist/jquery.toast.min.css" />
 </head>
 <body>
@@ -23,8 +24,8 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li><a asp-area="" asp-controller="Categorias" asp-action="Index">Categorias</a></li>
+                    <li><a asp-area="" asp-controller="Produtos" asp-action="Index">Produtos</a></li>
                 </ul>
             </div>
         </div>
@@ -42,6 +43,9 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/lib/jquery-toast-plugin/dist/jquery.toast.min.js"></script>
     <script src="~/lib/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <script src="~/lib/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="~/lib/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="~/lib/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
 
     @if(TempData["AlertaTipo"] != null)
     {

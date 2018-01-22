@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Web.Models
@@ -7,5 +8,7 @@ namespace Web.Models
         public int Id { get; set; }
         [Required]
         public string Nome { get; set; }
+
+        public IEnumerable<Produto> Produtos { get; set; }
     }
 }
